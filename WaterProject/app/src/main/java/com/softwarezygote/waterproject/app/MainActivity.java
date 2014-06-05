@@ -15,21 +15,21 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     // has the same methods as ActionBarActivity, they can be overridden if needed
 
     // Variables
-    public TextView resultString;  // correct or incorrect
-    public TextView ques;  // the question field
-    public TextView a;  // answer a field
-    public TextView b;  // answer b field
-    public TextView c;  // answer c field
-    public TextView d;  // answer d field
-    public RadioGroup radioGrp;  // radio button field
-    public boolean result = false;  // was the guess correct?
-    public int answer = 0;  // the position of the correct answer (0-3)
-    public Button mainButton;  // submit answer button handler
-    public Button nextButton;  // next question button handler
-    public int dbId = 0;  // current database row
-    public long dbLength;  // length of the database
-    public DatabaseHelper db;  // database object
-    public Question currentQuestion;  // question object
+    TextView resultString;  // correct or incorrect
+    TextView ques;  // the question field
+    TextView a;  // answer a field
+    TextView b;  // answer b field
+    TextView c;  // answer c field
+    TextView d;  // answer d field
+    RadioGroup radioGrp;  // radio button field
+    boolean result = false;  // was the guess correct?
+    int answer = 0;  // the position of the correct answer (0-3)
+    Button mainButton;  // submit answer button handler
+    Button nextButton;  // next question button handler
+    int dbId = 0;  // current database row
+    long dbLength;  // length of the database
+    DatabaseHelper db;  // database object
+    Question currentQuestion;  // question object
 
     // onCreate
     @Override  // override the extended onCreate
@@ -82,12 +82,12 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
     // displays the current question
     public void display(){  // no parameters
-        ques.setText(currentQuestion.ques);  // populate the textFields, display automatically
-        answer = currentQuestion.ans;
-        a.setText(currentQuestion.A);
-        b.setText(currentQuestion.B);
-        c.setText(currentQuestion.C);
-        d.setText(currentQuestion.D);
+        ques.setText(currentQuestion.getQues());  // populate the textFields, display automatically
+        answer = currentQuestion.getAns();
+        a.setText(currentQuestion.getA());
+        b.setText(currentQuestion.getB());
+        c.setText(currentQuestion.getC());
+        d.setText(currentQuestion.getD());
         radioGrp.clearCheck();  // clear the radio button selection from any previous question
     }
 

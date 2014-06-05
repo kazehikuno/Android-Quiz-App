@@ -14,8 +14,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {  // has the same methods as SQLiteOpenHelper
 
+    // variables
     private static String DB_NAME = "waterQuestions.db";  // name of the supplied database
-    public String DB_PATH;  // string that will hold the path to the DB
+    private String DB_PATH;  // string that will hold the path to the DB
 
 
     // Table Variable Names
@@ -29,7 +30,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {  // has the same methods 
     private static String KEY_D = "d";
 
 
-    public SQLiteDatabase myDataBase;  // an object of SQLiteDatabase
+    private SQLiteDatabase myDataBase;  // an object of SQLiteDatabase
 
     private Context myContext;  // a context variable
 
