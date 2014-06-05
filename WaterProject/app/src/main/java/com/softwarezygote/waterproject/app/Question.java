@@ -31,7 +31,7 @@ public class Question {
         this.C = pC;
         this.D = pD;
     }
-   
+
     // getters and setters
     public int getID(){
         return this.id;
