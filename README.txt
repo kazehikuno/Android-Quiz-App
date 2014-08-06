@@ -10,3 +10,4 @@ Learned:
 	Encapsulation
 	
 
+Update the database in app/src/main/assets
