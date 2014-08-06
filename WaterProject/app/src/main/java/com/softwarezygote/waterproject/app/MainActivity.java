@@ -1,11 +1,15 @@
 package com.softwarezygote.waterproject.app;
 
 
+import android.content.Context;
+import android.content.res.Configuration;
 import android.support.v7.app.ActionBarActivity;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -13,7 +17,7 @@ import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener {
     // has the same methods as ActionBarActivity, they can be overridden if needed
-
+    // will this show up?
     // Variables
     TextView resultString;  // correct or incorrect
     TextView ques;  // the question field
@@ -171,5 +175,11 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 result = false;  // clear previous answer
                 break;
         }
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        radioGrp.clearCheck();
     }
 }
