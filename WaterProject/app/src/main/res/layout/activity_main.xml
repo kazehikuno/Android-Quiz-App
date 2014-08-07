@@ -1,27 +1,36 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.softwarezygote.waterproject.app.MainActivity">
 
-    <!-- Main text, eventually question text -->
-    <TextView
-        android:id="@+id/questions"
-        android:text="@string/current_question"
-        android:textSize="16sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"/>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- Main text, eventually question text -->
+        <TextView
+            android:id="@+id/questions"
+            android:text="@string/current_question"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="1dp"
+            android:paddingBottom="10dip"
+            />
+
+    </ScrollView>
 
     <!-- The possible answers -->
     <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/radios"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/questions"
         android:orientation="vertical">
         <RadioButton android:id="@+id/radio_A"
             android:layout_width="wrap_content"
@@ -46,31 +55,6 @@
     </RadioGroup>
 
 
-
-
-
-    <!-- Load the next question -->
-    <Button
-        android:id="@+id/next_button"
-        android:layout_centerHorizontal="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="3dp"
-        android:layout_alignParentBottom="true"
-        android:text="@string/next_button" />
-
-    <!-- Submit Button, should compare answer and call appropriate activity -->
-    <Button
-        android:id="@+id/main_button"
-        android:layout_centerHorizontal="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_above="@id/next_button"
-        android:text="@string/main_button" />
-
     <!-- Temporary display of the result -->
     <TextView
         android:id="@+id/display_result"
@@ -78,10 +62,27 @@
         android:gravity="center"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/main_button"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"/>
 
-</RelativeLayout>
+    <!-- Submit Button, should compare answer and call appropriate activity -->
+    <Button
+        android:id="@+id/main_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="1dp"
+        android:text="@string/main_button" />
+
+    <!-- Load the next question -->
+    <Button
+        android:id="@+id/next_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="3dp"
+        android:text="@string/next_button" />
+
+</LinearLayout>

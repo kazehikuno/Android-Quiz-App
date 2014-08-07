@@ -6,6 +6,7 @@ import android.content.res.Configuration;
 import android.support.v7.app.ActionBarActivity;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,7 +18,7 @@ import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener {
     // has the same methods as ActionBarActivity, they can be overridden if needed
-    // will this show up?
+
     // Variables
     TextView resultString;  // correct or incorrect
     TextView ques;  // the question field
@@ -86,12 +87,12 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
     // displays the current question
     public void display(){  // no parameters
-        ques.setText(currentQuestion.getQues());  // populate the textFields, display automatically
+        ques.setText(Html.fromHtml(currentQuestion.getQues()));  // populate the textFields, display automatically
         answer = currentQuestion.getAns();
-        a.setText(currentQuestion.getA());
-        b.setText(currentQuestion.getB());
-        c.setText(currentQuestion.getC());
-        d.setText(currentQuestion.getD());
+        a.setText(Html.fromHtml(currentQuestion.getA()));
+        b.setText(Html.fromHtml(currentQuestion.getB()));
+        c.setText(Html.fromHtml(currentQuestion.getC()));
+        d.setText(Html.fromHtml(currentQuestion.getD()));
         radioGrp.clearCheck();  // clear the radio button selection from any previous question
     }
 

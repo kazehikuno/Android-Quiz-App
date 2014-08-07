@@ -1,14 +1,13 @@
 package com.softwarezygote.waterproject.app;
 
-// let's add some new comments and see if GitHub picks them up.
-
 /**
  * Created by Hays on 5/28/2014.
  * A class to maintain a single question as an object.
  */
+
 public class Question {
 
-     // private variables
+    // private variables
     private int id;
     private int ans;
     private String ques;
