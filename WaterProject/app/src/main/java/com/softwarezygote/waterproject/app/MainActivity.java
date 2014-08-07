@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener {
     // has the same methods as ActionBarActivity, they can be overridden if needed
-
+    // will this show up?
     // Variables
     TextView resultString;  // correct or incorrect
     TextView ques;  // the question field
