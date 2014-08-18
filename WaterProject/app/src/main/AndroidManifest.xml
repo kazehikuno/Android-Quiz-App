@@ -10,7 +10,8 @@
         <activity
             android:name="com.softwarezygote.waterproject.app.MainActivity"
             android:label="ACCS"
-            android:configChanges="orientation">
+            android:screenOrientation="landscape"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

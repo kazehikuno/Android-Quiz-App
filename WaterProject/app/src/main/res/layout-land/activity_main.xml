@@ -1,37 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:background="#F3F3F3"
     tools:context="com.softwarezygote.waterproject.app.MainActivity">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:id="@+id/lay"
-        android:layout_toLeftOf="@+id/buttons">
 
-        <!-- Main text, eventually question text -->
-        <TextView
-        android:id="@+id/questions"
-        android:text="@string/current_question"
-        android:textSize="16sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"/>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="0.98"
+        >
 
+        <ScrollView
+            android:id="@+id/scroll"
+            android:layout_width="0dp"
+            android:layout_weight="0.6"
+            android:layout_height="wrap_content">
+
+            <!-- Main text, eventually question text -->
+            <TextView
+            android:id="@+id/questions"
+            android:text="@string/current_question"
+            android:textSize="16sp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"/>
+
+        </ScrollView>
+        <ScrollView
+            android:id="@+id/scroll2"
+            android:layout_width="0dp"
+            android:layout_weight="0.4"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="1dp"
+            >
         <!-- The possible answers -->
         <RadioGroup
             android:id="@+id/radios"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/questions"
-            android:layout_marginRight="5dp"
+            android:layout_height="fill_parent"
             android:orientation="vertical">
         <RadioButton android:id="@+id/radio_A"
             android:layout_width="wrap_content"
@@ -54,49 +70,52 @@
             android:text="@string/string_D"
             android:onClick="onRadioButtonClicked"/>
         </RadioGroup>
+        </ScrollView>
+    </LinearLayout>
+
 
         <!-- Temporary display of the result -->
         <TextView
         android:id="@+id/display_result"
         android:text="@string/string_result"
         android:gravity="center"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"/>
-    </RelativeLayout>
+
 
     <LinearLayout
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/buttons"
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:weightSum="2"
-        android:layout_height="match_parent"
-        android:layout_alignParentRight="true">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
         <!-- Load the next question -->
         <Button
             android:id="@+id/next_button"
-            android:layout_width="150dp"
-            android:layout_height="fill_parent"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="2dp"
-            android:layout_weight="1"
             android:text="@string/next_button"
-            android:layout_gravity="right" />
+            />
+
         <!-- Submit Button, should compare answer and call appropriate activity -->
         <Button
             android:id="@+id/main_button"
-            android:layout_width="150dp"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="2dp"
-            android:layout_weight="1"
             android:text="@string/main_button"
-            android:layout_gravity="right" />
+            />
+
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>
