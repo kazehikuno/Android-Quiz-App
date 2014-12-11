@@ -49,6 +49,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
         setContentView(R.layout.activity_main);                 // set the layout according to the xml
 
+        dbId = (int )(Math.random() * (dbLength-1));
+
         currentQuestion = new Question();                       // finish creating the question object
         db = new DatabaseHelper(this);                          // finish creating the database object, send this context
 
