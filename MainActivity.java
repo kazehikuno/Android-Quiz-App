@@ -1,3 +1,9 @@
+// Christopher Hays
+// MainActivity for simple quiz app
+
+
+
+
 package com.softwarezygote.waterproject.app;
 
 

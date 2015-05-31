@@ -1,7 +1,7 @@
 package com.softwarezygote.waterproject.app;
 
 /**
- * Created by Hays on 5/28/2014.
+ * Christopher Hays 5/28/2014.
  * A class to maintain a single question as an object.
  */
 
